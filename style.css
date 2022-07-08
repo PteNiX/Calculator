@@ -16,6 +16,7 @@
   text-align: center;
   border: solid rgb(73, 21, 21);
   cursor: pointer;
+  line-height: 100px;
 }
 .btn:hover {
   background-color: rgb(221, 32, 32);
@@ -41,5 +42,46 @@
 }
 
 .container {
-  line-height: 100px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    border: solid rgb(73, 21, 21);
+    cursor: pointer;
+    line-height: 50px;
+  }
+  .buttons {
+    margin: auto;
+    background-color: red;
+    width: 224px;
+    height: 223px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .title {
+    width: 222px;
+    color: white;
+    margin: auto;
+    background-color: red;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .screen {
+    width: 218px;
+    color: red;
+    margin: auto;
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+    border: solid rgb(73, 21, 21);
+  }
 }
