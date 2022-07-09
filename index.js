@@ -80,86 +80,81 @@ document.querySelector(".buttons").onclick = (e) => {
     if (a > 999999999999999999) {
       document.querySelector(".screen").innerHTML = "вельмі вялікая лічба";
     }
+
+    let finalSound = Array.from(
+      `${document.querySelector(".screen").innerHTML}`
+    );
+
+    let arraySong = [];
+
+    //дадаю ў масіў трэкі
+
+    for (let i = 0; i < finalSound.length; i++) {
+      arraySong.push(`./assets/${finalSound[i]}.mp3`);
+    }
+
+    //ствараю пераменную
+    let audio = new Audio(arraySong);
+
+    audio.song = 0;
+    audio.src = arraySong[audio.song];
+
+    audio.onended = function (e) {
+      if (this.song == arraySong.length - 1) {
+        return;
+      } else {
+        this.song++;
+      }
+      this.src = arraySong[this.song];
+      this.play();
+    };
+    audio.play();
   }
 
   //гукі
+
+  const audio = new Audio();
+  audio.preload = "auto";
+
   if (key == "0") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/0.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "1") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/1.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "2") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/2.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "3") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/3.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "4") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/4.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "5") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/5.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "6") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/6.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "7") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/7.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "8") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/8.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
 
   if (key == "9") {
-    const audio = new Audio();
-    audio.preload = "auto";
     audio.src = "./assets/9.mp3";
-    audio.currentTime = 0;
-    audio.play();
   }
+  audio.currentTime = 0;
+  audio.play();
 };
